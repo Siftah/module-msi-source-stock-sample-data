@@ -8,12 +8,14 @@ namespace MagentoEse\MsiSourceStockSampleData\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\SampleData\Context as SampleDataContext;
 use Magento\InventoryApi\Api\Data\SourceInterfaceFactory;
 use Magento\InventoryApi\Api\Data\StockInterfaceFactory;
 use Magento\InventoryApi\Api\Data\StockSourceLinkInterfaceFactory;
 use Magento\InventorySalesApi\Api\Data\SalesChannelInterfaceFactory;
 use Magento\InventorySalesApi\Api\Data\SalesChannelInterface;
 use Magento\InventoryApi\Api\StockRepositoryInterface;
+use Magento\Framework\Api\SearchCriteriaBuilder;
 
 /**
  * Class InstallConfigurableSampleData
@@ -40,6 +42,13 @@ class InstallSourceStock implements DataPatchInterface
     /** @var StockRepositoryInterface  */
     protected $stockRepository;
 
+    /**
+     * @var \Magento\Framework\Setup\SampleData\FixtureManager
+     */
+    protected $fixtureManager;
+
+    /** @var SearchCriteriaBuilder  */
+    protected $searchCriteriaBuilder;
 
     /**
      * InstallSourceStock constructor.
@@ -51,12 +60,15 @@ class InstallSourceStock implements DataPatchInterface
      * @param StockRepositoryInterface $stockRepository
      */
     public function __construct(
+        SampleDataContext $sampleDataContext,
         ModuleDataSetupInterface $moduleDataSetup,
         SourceInterfaceFactory $sourceInterface,
         StockInterfaceFactory $stockInterface,
         StockSourceLinkInterfaceFactory $stockSourceLinkInterface,
         SalesChannelInterfaceFactory $salesChannelInterface,
-        StockRepositoryInterface $stockRepository
+        StockRepositoryInterface $stockRepository,
+        SearchCriteriaBuilder $searchCriteriaBuilder
+
        )
     {
         $this->moduleDataSetup = $moduleDataSetup;
@@ -65,16 +77,21 @@ class InstallSourceStock implements DataPatchInterface
         $this->stockSourceLinkInterface = $stockSourceLinkInterface;
         $this->salesChannelInterface = $salesChannelInterface;
         $this->stockRepository = $stockRepository;
+        $this->fixtureManager = $sampleDataContext->getFixtureManager();
+        $this->csvReader = $sampleDataContext->getCsvReader();
+        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
     }
 
 
     public function apply()
     {
         //create sources
-        $this->addSources();
+        $this->addSources(['MagentoEse_MsiSourceStockSampleData::fixtures/sources.csv']);
 
         //create stock
-        $this->addStocks();
+        $this->addStocks(['MagentoEse_MsiSourceStockSampleData::fixtures/stock.csv']);
+
+        $this->assignSourcesToStock(['MagentoEse_MsiSourceStockSampleData::fixtures/source_stock.csv']);
 
     }
 
@@ -96,36 +113,103 @@ class InstallSourceStock implements DataPatchInterface
         ];
     }
 
-    public function addSources(): void
+    public function addSources(array $fixtures): void
     {
-        $source = $this->sourceInterface->create();
-        $source->setData(['source_code' => 'source', 'name' => 'testname', 'contact_name' => 'Mr pink', 'email' => 'pink@thelumsatory.com',
-            'enabled' => 1, 'country_id' => 'US', 'postcode' => '53094']);
-        $source->save();
+        foreach ($fixtures as $fileName) {
+            $fileName = $this->fixtureManager->getFixture($fileName);
+            if (!file_exists($fileName)) {
+                continue;
+            }
+
+            $rows = $this->csvReader->getData($fileName);
+            $header = array_shift($rows);
+
+            foreach ($rows as $row) {
+                $data = [];
+                foreach ($row as $key => $value) {
+                    $data[$header[$key]] = $value;
+                }
+                $source = $this->sourceInterface->create();
+                $source->setData(['source_code' => $data['source_code'],
+                    'name' => $data['source_name'],
+                    'contact_name' => $data['contact_name'],
+                    'email' => $data['email'],
+                    'enabled' => $data['enabled'],
+                    'country_id' => $data['country_id'],
+                    'postcode' => $data['postcode']]);
+                $source->save();
+            }
+        }
     }
 
-    public function addStocks(): void
+    public function addStocks(array $fixtures): void
     {
-        $stock = $this->stockInterface->create();
-        $stock->setName('new Stock');
-        $stock->save();
-        $stockId = $stock->getStockId();
-        //set sales channel on stock
-        $stock = $this->stockRepository->get($stockId);
-        $extensionAttributes = $stock->getExtensionAttributes();
-        $salesChannel = $this->salesChannelInterface->create();
-        $salesChannel->setCode('base');
-        $salesChannel->setType(SalesChannelInterface::TYPE_WEBSITE);
-        $salesChannels[] = $salesChannel;
-        $extensionAttributes->setSalesChannels($salesChannels);
-        $this->stockRepository->save($stock);
-        //assign sources to stock
-        /** @var \Magento\InventoryApi\Api\Data\StockSourceLinkInterface  $sourceLink */
-        $sourceLink = $this->stockSourceLinkInterface->create();
-        $sourceLink->setSourceCode('source');
-        $sourceLink->setStockId(2);
-        $sourceLink->setPriority(1);
-        $sourceLink->save();
+        foreach ($fixtures as $fileName) {
+            $fileName = $this->fixtureManager->getFixture($fileName);
+            if (!file_exists($fileName)) {
+                continue;
+            }
 
+            $rows = $this->csvReader->getData($fileName);
+            $header = array_shift($rows);
+
+            foreach ($rows as $row) {
+                $data = [];
+                foreach ($row as $key => $value) {
+                    $data[$header[$key]] = $value;
+                }
+                $stock = $this->stockInterface->create();
+                $stock->setName($data['stock_name']);
+                $stock->save();
+                //set sales channel on stock
+                if($data['in_channel']){
+                    $stockId = $stock->getStockId();
+                    $stock = $this->stockRepository->get($stockId);
+                    $extensionAttributes = $stock->getExtensionAttributes();
+                    $salesChannel = $this->salesChannelInterface->create();
+                    $salesChannel->setCode($data['in_channel']);
+                    $salesChannel->setType(SalesChannelInterface::TYPE_WEBSITE);
+                    $salesChannels[] = $salesChannel;
+                    $extensionAttributes->setSalesChannels($salesChannels);
+                    $this->stockRepository->save($stock);
+                }
+
+            }
+        }
+    }
+
+    public function assignSourcesToStock($fixtures): void
+    {
+
+        foreach ($fixtures as $fileName) {
+            $fileName = $this->fixtureManager->getFixture($fileName);
+            if (!file_exists($fileName)) {
+                continue;
+            }
+
+            $rows = $this->csvReader->getData($fileName);
+            $header = array_shift($rows);
+
+            foreach ($rows as $row) {
+                $data = [];
+                foreach ($row as $key => $value) {
+                    $data[$header[$key]] = $value;
+                }
+                //assign sources to stock
+                $this->searchCriteriaBuilder->addFilter('name', $data['stock'], 'eq');
+                $search = $this->searchCriteriaBuilder->create();
+                $stockList = $this->stockRepository->getList($search)->getItems();
+                /** @var \Magento\InventoryApi\Api\Data\StockInterface $stock */
+                foreach ($stockList as $stock) {
+
+                    /** @var \Magento\InventoryApi\Api\Data\StockSourceLinkInterface $sourceLink */
+                    $sourceLink = $this->stockSourceLinkInterface->create();
+                    $sourceLink->setSourceCode($data['source_code']);
+                    $sourceLink->setStockId($stock->getStockId());
+                    $sourceLink->setPriority($data['priority']);
+                    $sourceLink->save();
+                }
+            }
+        }
     }
 }

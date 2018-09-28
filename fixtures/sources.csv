@@ -1,0 +1,5 @@
+source_code,source_name,contact_name,email,enabled,country_id,postcode
+us_warehouse,US Warehouse,John McClane,drhodes@thelumastory.com,1,US,73301
+us_store,NYC Store,Holly Gennaro,jsmith@thelumastory.com,1,US,10001
+de_warehouse,DE Warehouse,Hans Gruber,hgruber@thelumastory.com,0,DE,10115
+de_store,Berlin Store,Samantha Coleman,scoleman@thelumastory.com,0,DE,10178
