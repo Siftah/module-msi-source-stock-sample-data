@@ -3,3 +3,7 @@ us_warehouse,North America,2
 us_store,North America,1
 de_warehouse,Europe,2
 de_store,Europe,1
+la_warehouse,Latin America,2
+la_store,Latin America,1
+apac_warehouse,APAC,2
+apac_store,APAC,1

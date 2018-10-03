@@ -3,3 +3,7 @@ us_warehouse,US Warehouse,John McClane,drhodes@thelumastory.com,1,US,73301
 us_store,NYC Store,Holly Gennaro,jsmith@thelumastory.com,1,US,10001
 de_warehouse,DE Warehouse,Hans Gruber,hgruber@thelumastory.com,0,DE,10115
 de_store,Berlin Store,Samantha Coleman,scoleman@thelumastory.com,0,DE,10178
+la_warehouse,BR Warehouse,Letty Ortiz,lortiz@thelumastory.com,0,BR,04552-050
+la_store,Rio de Janeiro Store,Rosaura De La Garza,rdelagarza@thelumastory.com,0,BR,20011-010
+apac_warehouse,JP Warehouse,Chen Zhen,czhen@thelumastory.com,0,JP,100-0013
+apac_store,Tokyo Store,Jubei Kibagami ,jkibagami@thelumastory.com,0,JP,100-2100
