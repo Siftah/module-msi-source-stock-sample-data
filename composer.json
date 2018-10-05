@@ -1,9 +1,11 @@
 {
-    "name": "magentoese/module-msi-source-stock-sample-data",
+    "name": "magento/module-msi-source-stock-sample-data",
     "description": "N/A",
     "require": {
         "php": "~7.1.3||~7.2.0",
-        "magento/framework": "*"
+        "magento/framework": "*",
+        "magento/module-inventory-api":"*",
+        "magento/module-inventory-sales-api":"*"
     },
     "type": "magento2-module",
     "license": [
@@ -15,7 +17,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MagentoEse\\MsiSourceStockSampleData\\": ""
+            "Magento\\MsiSourceStockSampleData\\": ""
         }
     }
 }

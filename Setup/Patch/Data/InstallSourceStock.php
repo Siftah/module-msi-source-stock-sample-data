@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace MagentoEse\MsiSourceStockSampleData\Setup\Patch\Data;
+namespace Magento\MsiSourceStockSampleData\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -86,12 +86,12 @@ class InstallSourceStock implements DataPatchInterface
     public function apply()
     {
         //create sources
-        $this->addSources(['MagentoEse_MsiSourceStockSampleData::fixtures/sources.csv']);
+        $this->addSources(['Magento_MsiSourceStockSampleData::fixtures/sources.csv']);
 
         //create stock
-        $this->addStocks(['MagentoEse_MsiSourceStockSampleData::fixtures/stock.csv']);
+        $this->addStocks(['Magento_MsiSourceStockSampleData::fixtures/stock.csv']);
 
-        $this->assignSourcesToStock(['MagentoEse_MsiSourceStockSampleData::fixtures/source_stock.csv']);
+        $this->assignSourcesToStock(['Magento_MsiSourceStockSampleData::fixtures/source_stock.csv']);
 
     }
 
