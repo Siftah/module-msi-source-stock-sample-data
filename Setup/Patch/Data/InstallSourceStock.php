@@ -18,8 +18,8 @@ use Magento\InventoryApi\Api\StockRepositoryInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 
 /**
- * Class InstallConfigurableSampleData
- * @package Magento\ConfigurableSampleDataVenia\Setup\Patch\Data
+ * Class InstallSourceStock
+ * @package Magento\MsiSourceStockSampleData\Setup\Patch\Data
  */
 class InstallSourceStock implements DataPatchInterface
 {
