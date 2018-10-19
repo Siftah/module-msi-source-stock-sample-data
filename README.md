@@ -1,4 +1,6 @@
-# module-msi-source-stock-sample-data
+# Magento_MsiSourceStockSampleData
+
+Sample data for Magento PWA
 
 Adds Sources and Stocks sample data for use in Multi Source Inventory
 
