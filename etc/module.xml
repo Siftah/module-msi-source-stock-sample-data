@@ -10,6 +10,11 @@
         <sequence>
             <module name="Magento_InventoryApi"/>
             <module name="Magento_InventorySalesApi"/>
+            <module name="Magento_CatalogSampleData" />
+            <module name="Magento_ConfigurableSampleData" />
+            <module name="Magento_SalesSampleData" />
+            <module name="MagentoEse_VeniaCatalogSampleData"/>
+            <module name="MagentoEse_DemoSampleOrderData"/>
         </sequence>
     </module>
 </config>
