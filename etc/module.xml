@@ -10,6 +10,11 @@
         <sequence>
             <module name="Magento_InventoryApi"/>
             <module name="Magento_InventorySalesApi"/>
+            <module name="MagentoEse_B2BMilwaukeeSampleData"/>
+            <module name="MagentoEse_B2BLegrandSampleData"/>
+            <module name="MagentoEse_B2BPhilipsSampleData"/>
+            <module name="MagentoEse_B2BMilwaukeeSampleData"/>
+            <module name="MagentoEse_B2BOrderSampleData"/>
         </sequence>
     </module>
 </config>
