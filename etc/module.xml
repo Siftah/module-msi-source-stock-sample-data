@@ -11,7 +11,7 @@
             <module name="Magento_InventoryApi"/>
             <module name="Magento_InventorySalesApi"/>
             <module name="Magento_CatalogSampleDataVenia"/>
-            <module name="Magento_CatalogSampleDataVenia"/>
+            <module name="Magento_ConfigurableSampleDataVenia"/>
             <module name="Magento_SalesSampleDataVenia"/>
         </sequence>
     </module>
