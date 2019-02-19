@@ -52,12 +52,14 @@ class InstallSourceStock implements DataPatchInterface
 
     /**
      * InstallSourceStock constructor.
+     * @param SampleDataContext $sampleDataContext
      * @param ModuleDataSetupInterface $moduleDataSetup
      * @param SourceInterfaceFactory $sourceInterface
      * @param StockInterfaceFactory $stockInterface
      * @param StockSourceLinkInterfaceFactory $stockSourceLinkInterface
      * @param SalesChannelInterfaceFactory $salesChannelInterface
      * @param StockRepositoryInterface $stockRepository
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
      */
     public function __construct(
         SampleDataContext $sampleDataContext,
