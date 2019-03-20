@@ -69,7 +69,6 @@ class AddAddressAndLatLong implements DataPatchInterface
                 $source->setCity($data['city']);
                 $source->setPostcode($data['postcode']);
                 if($data['region_id']!=''){
-                    echo "region id ". $data['region_id'] ."\n";
                     $source->setRegionId($data['region_id']);
                 }
                 $source->setRegion($data['region']);
