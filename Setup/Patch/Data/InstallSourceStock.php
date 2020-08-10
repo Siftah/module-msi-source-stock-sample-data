@@ -138,6 +138,7 @@ class InstallSourceStock implements DataPatchInterface
                     'email' => $data['email'],
                     'enabled' => $data['enabled'],
                     'country_id' => $data['country_id'],
+                    'phone' => $data['phone'],
                     'postcode' => $data['postcode']]);
                 $source->save();
             }

@@ -1,9 +1,9 @@
-source_code,source_name,contact_name,email,enabled,country_id,postcode,street,city,region_id,region,lat,long
-us_warehouse,US Warehouse,John McClane,drhodes@thelumastory.com,1,US,78758,11501 Domain Dr #150,Austin,57,Texas,30.4017861,-97.7258717
-us_store,NYC Store,Holly Gennaro,jsmith@thelumastory.com,1,US,10017,89 E 42nd St,New York,43,New York,40.7527302,-73.9794181
-de_warehouse,DE Warehouse,Hans Gruber,hgruber@thelumastory.com,0,DE,01097,Neustadter Markt 5,Dresden,91,Sachsen,51.0589765,13.7407491
-de_store,Berlin Store,Samantha Coleman,scoleman@thelumastory.com,0,DE,13355,Bernauer Str. 119,Berlin,82,Berlin,52.533779,13.3816089
-la_warehouse,BR Warehouse,Letty Ortiz,lortiz@thelumastory.com,0,BR,70165-900 ,Praca dos Tres Poderes,Brasilia,511,DF,-15.7948056,-47.8733418
-la_store,Rio de Janeiro Store,Rosaura De La Garza,rdelagarza@thelumastory.com,0,BR,20021-140,"Av. Infante Dom Henrique, 85 - Parque do Flamengo",Rio de Janeiro,502,RJ,-22.9149574,-43.1776568
-apac_warehouse,JP Warehouse,Chen Zhen,czhen@thelumastory.com,0,JP,556-0023,"1 Chome-12-__ Inari, Naniwa-ku",Osaka,,Osaka,34.6664862,135.4938952
-apac_store,Tokyo Store,Jubei Kibagami ,jkibagami@thelumastory.com,0,JP,112-8531,"Toppan Koishikawa Building 1-3-3 Suido, Bunkyo-ku",Tokyo,,Tokyo,35.7109875,139.72826
+source_code,source_name,contact_name,email,enabled,country_id,postcode,street,city,region_id,region,lat,long,phone
+us_warehouse,US Warehouse,John McClane,drhodes@thelumastory.com,1,US,78758,11501 Domain Dr #150,Austin,57,Texas,30.4017861,-97.7258717,555-555-5555
+us_store,NYC Store,Holly Gennaro,jsmith@thelumastory.com,1,US,10017,89 E 42nd St,New York,43,New York,40.7527302,-73.9794181,555-555-5555
+de_warehouse,DE Warehouse,Hans Gruber,hgruber@thelumastory.com,0,DE,01097,Neustadter Markt 5,Dresden,91,Sachsen,51.0589765,13.7407491,555-555-5555
+de_store,Berlin Store,Samantha Coleman,scoleman@thelumastory.com,0,DE,13355,Bernauer Str. 119,Berlin,82,Berlin,52.533779,13.3816089,555-555-5555
+la_warehouse,BR Warehouse,Letty Ortiz,lortiz@thelumastory.com,0,BR,70165-900 ,Praca dos Tres Poderes,Brasilia,511,DF,-15.7948056,-47.8733418,555-555-5555
+la_store,Rio de Janeiro Store,Rosaura De La Garza,rdelagarza@thelumastory.com,0,BR,20021-140,"Av. Infante Dom Henrique, 85 - Parque do Flamengo",Rio de Janeiro,502,RJ,-22.9149574,-43.1776568,555-555-5555
+apac_warehouse,JP Warehouse,Chen Zhen,czhen@thelumastory.com,0,JP,556-0023,"1 Chome-12-__ Inari, Naniwa-ku",Osaka,,Osaka,34.6664862,135.4938952,555-555-5555
+apac_store,Tokyo Store,Jubei Kibagami ,jkibagami@thelumastory.com,0,JP,112-8531,"Toppan Koishikawa Building 1-3-3 Suido, Bunkyo-ku",Tokyo,,Tokyo,35.7109875,139.72826,555-555-5555
