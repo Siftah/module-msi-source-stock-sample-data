@@ -1,9 +1,11 @@
 source_code,stock,priority
-us_warehouse,North America,2
-us_store,North America,1
-de_warehouse,Europe,2
-de_store,Europe,1
-la_warehouse,Latin America,2
-la_store,Latin America,1
-apac_warehouse,APAC,2
-apac_store,APAC,1
+es_warehouse_madrid,Europe,1
+es_warehouse_barcelona,Europe,2
+es_store_valencia,Europe,3
+es_store_sevilla,Europe,4
+es_store_seville,Europe,5
+es_store_zaragoza,Europe,6
+es_store_navarre,Europe,7
+es_store_mã¡laga,Europe,8
+"es_store_leã³n province",Europe,9
+es_store_asturias,Europe,10
