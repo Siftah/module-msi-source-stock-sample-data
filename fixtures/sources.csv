@@ -1,13 +1,13 @@
 source_code,source_name,contact_name,email,enabled,country_id,postcode,street,city,region_id,region,lat,long,phone
-es_store_madrid,Madrid,"Leigh Haney",madrid@thelumastory.com,1,ES,30988,"206 Highland Avenue",Madrid,,"Community of Madrid",40.418888888,-3.691944444,282-5900-5315
-es_warehouse_madrid,"Madrid Warehouse","Delois Leon",madrid@thelumastory.com,1,ES,30988,"195 Pecan Place",Madrid,,"Community of Madrid",40.418888888,-3.691944444,490-3200-9438
-es_store_barcelona,Barcelona,"Meta Hoffman",barcelona@thelumastory.com,1,ES,33405,"355 Massachusetts Avenue",Barcelona,,"Barcelona Province",41.3825,2.176944444,124-5050-6478
-es_warehouse_barcelona,"Barcelona Warehouse","Brooks Yang",barcelona@thelumastory.com,1,ES,33405,"82 Oak Road",Barcelona,,"Barcelona Province",41.3825,2.176944444,766-5700-4495
-es_store_valencia,Valencia,"Julie Wiley",valencia@thelumastory.com,1,ES,27059,"100 Birch Road",Valencia,,"Valencia Province",39.47,-0.376388888,983-9790-5496
-es_store_sevilla,Sevilla,"Adrien Carlson",sevilla@thelumastory.com,1,ES,27897,"253 Pioneer Avenue",Sevilla,,"Seville Province",37.382777777,-5.973055555,670-4680-6576
-es_store_seville,Seville,"Mariah Navarro",seville@thelumastory.com,1,ES,27214,"216 Vermont Drive",Seville,,"Seville Province",37.383333333,-5.983333333,602-1310-8361
-es_store_zaragoza,Zaragoza,"Mariann Hicks",zaragoza@thelumastory.com,1,ES,29737,"212 Texas Place",Zaragoza,,"Zaragoza Province",41.65,-0.883333333,254-1500-9450
-es_store_navarre,Navarre,"Shemika Spencer",navarre@thelumastory.com,1,ES,3187534,"299 Iowa Avenue",Navarre,,Navarre,42.816666666,-1.65,652-1970-2655
-es_store_m�laga,Málaga,"Davida Wilson",m�laga@thelumastory.com,1,ES,27072,"287 Illinois Avenue",Málaga,,"Málaga Province",36.716666666,-4.416666666,952-9720-8193
-"es_store_le�n province","León Province","Kandy Witt","le�n province@thelumastory.com",1,ES,3182137,"290 Hampton Avenue","León Province",,"León Province",42.666666666,-6,560-3770-7589
-es_store_asturias,Asturias,"Gisele Estrada",asturias@thelumastory.com,1,ES,144274,"319 Alaska Road",Asturias,,"Region of Murcia",37.986111111,-1.130277777,983-5000-8353
+gb_store_london,London,"Velma Cabrera",london@thelumastory.com,1,GB,45633,"57 Wilson Road",London,,England,51.507222222,-0.1275,423-3810-3424
+gb_warehouse_london,"London Warehouse","Marcellus Valencia",london@thelumastory.com,1,GB,45633,"255 Smith Road",London,,England,51.507222222,-0.1275,813-2520-5114
+de_store_berlin,Berlin,"Wilhemina Hood",berlin@thelumastory.com,1,DE,24845,"27 Canyon Avenue",Berlin,,Berlin,52.516666666,13.383333333,496-3850-4364
+de_warehouse_berlin,"Berlin Warehouse","Tia Love",berlin@thelumastory.com,1,DE,24845,"113 Kahili Drive",Berlin,,Berlin,52.516666666,13.383333333,184-5610-4330
+es_store_madrid,Madrid,"Jacelyn Bishop",madrid@thelumastory.com,1,ES,30988,"287 Main Road",Madrid,,"Community of Madrid",40.418888888,-3.691944444,723-8680-1316
+fr_store_paris,Paris,"Fern Sampson",paris@thelumastory.com,1,FR,144571,"15 Willow Place",Paris,,Île-de-France,48.856944444,2.351388888,437-9370-5854
+de_store_hamburg,Hamburg,"Anjelica Haney",hamburg@thelumastory.com,1,DE,23563,"221 Birch Place",Hamburg,,Hamburg,53.55,10,221-6430-1360
+es_store_barcelona,Barcelona,"Veronika Gamble",barcelona@thelumastory.com,1,ES,33405,"220 Mountain View Drive",Barcelona,,Catalonia,41.3825,2.176944444,944-8300-7565
+de_store_munich,Munich,"Linh Andrews",munich@thelumastory.com,1,DE,21313,"178 Rhode Island Road",Munich,,Bavaria,48.13743,11.57549,734-1260-9400
+gb_store_birmingham,Birmingham,"Emerita Castro",birmingham@thelumastory.com,1,GB,46343,"324 Delaware Avenue",Birmingham,,England,52.48,-1.9025,334-5670-8965
+de_store_cologne,Cologne,"Lakia Roman",cologne@thelumastory.com,1,DE,3044453,"111 Center Avenue",Cologne,,"North Rhine-Westphalia",50.942222222,6.957777777,289-1360-4072
+fr_store_marseille,Marseille,"Mohamed Medina",marseille@thelumastory.com,1,FR,38211,"118 Nebraska Road",Marseille,,"Provence-Alpes-Côte d'Azur",43.296666666,5.376388888,812-4480-4245
